@@ -1,16 +1,7 @@
 #!/usr/bin/env bash
-
-# Update package/software
-sudo apt-get update
-
-# Install Nginx
-sudo apt-get install -y nginx
-
-# Configure Nginx to listen on port 80
-sudo sed -i 's/listen [[:digit:]]\+;/listen 80;/' /etc/nginx/sites-available/default
-
-# Create HTML file with "Hello World!"
-echo "Hello World!" | sudo tee /var/www/html/index.html
-
-# Restart Nginx without using systemctl
-sudo kill -s HUP $(pidof nginx)
+#Web servers are the piece of software generating and serving HTML/CSS pages!
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+service nginx start
