@@ -1,16 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# configure a brand new NGINX server
 
-# Update package list
-sudo apt-get update
+apt-get -y update
+apt-get -y install nginx
 
-# Install Nginx
-sudo apt-get install -y nginx
+echo "Hello World!" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 
-# Configure Nginx to listen on port 80
-sudo sed -i 's/listen [[:digit:]]\+;/listen 80;/' /etc/nginx/sites-available/default
+sed -i "/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
+sed -i "/listen 80 default_server;/a error_page 404 /404.html;" /etc/nginx/sites-available/default
 
-# Create HTML file with "Hello World!"
-echo "Hello World!" | sudo tee /var/www/html/index.html
-
-# Restart Nginx without using systemctl
-sudo kill -s HUP $(pidof nginx)
+ufw allow 'Nginx HTTP'
+service nginx restart
