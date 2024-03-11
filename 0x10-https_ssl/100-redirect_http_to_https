@@ -41,7 +41,7 @@ frontend admdmd-frontend
         default_backend admdmd-backend
 
 frontend admdmd-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/www.admdmd.tech.pem
+        bind *:443 ssl crt /etc/haproxy/certs/admdmd.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend admdmd-backend
 
