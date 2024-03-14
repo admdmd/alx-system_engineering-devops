@@ -41,11 +41,11 @@ frontend admdmd-frontend
         default_backend admdmd-backend
 
 frontend admdmd-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/admdmd.tech.pem
+        bind *:443 ssl crt /etc/haproxy/certs/www.admdmd.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend admdmd-backend
 
 backend admdmd-backend
         balance roundrobin
-        server 297342-web-01 100.25.202.221:80 check
-        server 297342-web-02 18.207.233.112:80 check
+        server 297342-web-01 54.85.7.27:80 check
+        server 297342-web-02 18.234.249.180:80 check
