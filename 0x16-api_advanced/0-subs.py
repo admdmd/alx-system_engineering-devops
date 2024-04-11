@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that queries subscribers on a given Reddit subreddit.
+script that queries subscribers on a given Reddit subreddit.
 """
 
 import requests
@@ -17,8 +17,6 @@ def number_of_subscribers(subreddit):
         elif response.status_code == 404:  # Not Found
             return 0
         else:
-            print(f"Unexpected status code: {response.status_code}")
-            return 0
+            return "Error: Unexpected status code"
     except Exception as e:
-        print(f"Error: {e}")
-        return 0
+        return f"Error: {e}"
