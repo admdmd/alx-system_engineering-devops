@@ -6,8 +6,8 @@ In details
 ## Issue Summary:
 
 **Duration:**  
-Start Time: January 15, 2024, 14:30 UTC  
-End Time: January 15, 2024, 16:45 UTC  
+Start Time: April,8 2024, 14:30 UTC  
+End Time: April 15, 2024, 16:45 UTC  
 
 **Impact:**  
 The main web application experienced a downtime of approximately 2 hours. Users encountered slow response times, and 30% of the user base was affected.
@@ -62,4 +62,4 @@ This postmortem takes you on a journey of a web stack gone astray, all because o
 
 
 Blog link
-https://ruova.hashnode.dev/postmortem-for-web-stack-debugging-outage
+https://admdmd.hashnode.dev/postmortem-for-web-stack-debugging-outage
