@@ -1,16 +1,4 @@
 #!/usr/bin/env bash
+# Gracefully reloads Gunicorn
 
-# Define the Gunicorn process name
-GUNICORN_PROCESS_NAME="gunicorn"
-
-# Check if Gunicorn is running
-if pgrep -x "$GUNICORN_PROCESS_NAME" > /dev/null
-then
-    # If Gunicorn is running, gracefully reload it
-    echo "Reloading Gunicorn gracefully..."
-    sudo pkill -HUP "$GUNICORN_PROCESS_NAME"
-    echo "Gunicorn reloaded gracefully."
-else
-    echo "Gunicorn is not running."
-fi
-
+sudo pkill -HUP gunicorn
